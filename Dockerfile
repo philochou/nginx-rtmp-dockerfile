@@ -6,6 +6,9 @@ ENV PATH $PATH:/usr/local/nginx/sbin
 EXPOSE 1935
 EXPOSE 80
 
+# Change Source To 163 Mirrors
+RUN sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.163\.com\/ubuntu\//g' /etc/apt/sources.list
+
 # create directories
 RUN mkdir /src && mkdir /config && mkdir /logs && mkdir /data && mkdir /static
 
